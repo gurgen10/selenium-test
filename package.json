@@ -1,0 +1,23 @@
+{
+  "name": "selenium-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mochatest": "mocha index --timeout 200000"
+  },
+  "author": "Gurgen Torosyan",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "cron": "^1.8.2",
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "winston": "^3.3.3"
+  }
+}
