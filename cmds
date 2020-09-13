@@ -1,22 +1,5 @@
 docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:latest
 
 docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:latest
-java -jar jenkins.war --httpPort=8080.
+java -jar jenkins.war --httpPort=8080
 http://localhost:4444/
-
-<script>
-function addServicebotScript() {
-    var script = document.createElement("script");  // create a script DOM node
-    script.src = '/app/js/ls-pricing-page.js';  // set its src to the provided URL
-    script.async = 'async';
-
-    document.body.appendChild(script);
-    window.removeEventListener('scroll', addServicebotScript, false);
-} 
-window.addEventListener('scroll',addServicebotScript, false);    
-</script>
-
-jetkins selver password RMGlkt&lak%2020+
-gurgen_admin
-adminRMG%2020
-http://96.126.125.223:8080/
