@@ -1,3 +1,3 @@
 #!bin/bash
-npm --version
+npm i
 npm run mochatest
