@@ -7,7 +7,8 @@ describe("Linksignal test", () => {
   before(() => {
     driver = new Builder()
       .forBrowser("firefox")
-      // .usingServer("http://localhost:4444/wd/hub")
+      .usingServer("http://104.237.136.25:8080")
+      //.usingServer("http://localhost:4444/wd/hub")
       //.withCapabilities(capabilities)
       .build();
     driver.manage().window().maximize();
