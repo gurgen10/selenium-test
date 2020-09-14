@@ -3,3 +3,5 @@ docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:lates
 docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:latest
 java -jar jenkins.war --httpPort=8080
 http://localhost:4444/
+
+adminRMG%2020

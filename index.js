@@ -1,12 +1,12 @@
 const { Builder, By, Key, until, Capabilities } = require("selenium-webdriver");
 const { expect } = require("chai");
-const capabilities = Capabilities.chrome();
+const capabilities = Capabilities.firefox();
 
 describe("Linksignal test", () => {
   let driver = null;
   before(() => {
     driver = new Builder()
-      .forBrowser("chrome")
+      .forBrowser("firefox")
       // .usingServer("http://localhost:4444/wd/hub")
       //.withCapabilities(capabilities)
       .build();
@@ -66,7 +66,7 @@ describe("Linksignal test", () => {
           )
           .click()
           .then(() => {
-            setTimeout(() => {
+            driver.sleep(10000).then(() => {
               driver.executeScript(
                 "document.getElementById('chmln-button-5f02356ff2976e0007a3c553').scrollIntoView();"
               );
@@ -79,7 +79,7 @@ describe("Linksignal test", () => {
                 )
                 .click().then(done)
                
-            }, 10000);
+            });
           })
       })
       .catch((e) => done(e) );
