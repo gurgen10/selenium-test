@@ -24,7 +24,7 @@ describe("Linksignal test", () => {
       //.usingServer("http://localhost:4444/wd/hub")
       //.setFirefoxOptions(new firefox.Options().addArguments('--headless'))
       .setChromeOptions(new chrome.Options().addArguments('--headless'))
-      .withCapabilities(firefoxCapabilities)
+      .withCapabilities(chromeCapabilities)
       .build();
   });
 
