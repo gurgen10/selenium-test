@@ -9,6 +9,10 @@ firefoxCapabilities.set('firefoxOptions', {
       'args': ['--headless', '--disable-gpu']
     });
 
+chromeCapabilities.set('chromeOptions', {
+  'args': ['--headless', '--disable-gpu']
+});
+
     
 
 
@@ -16,9 +20,10 @@ describe("Linksignal test", () => {
   let driver = null;
   before(() => {
     driver = new Builder()
-      .forBrowser("firefox")
+      .forBrowser("chrome")
       //.usingServer("http://localhost:4444/wd/hub")
-      .setFirefoxOptions(new firefox.Options().addArguments('--headless'))
+      //.setFirefoxOptions(new firefox.Options().addArguments('--headless'))
+      .setChromeOptions(new chrome.Options().addArguments('--headless'))
       .withCapabilities(firefoxCapabilities)
       .build();
   });
