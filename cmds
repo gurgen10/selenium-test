@@ -5,3 +5,7 @@ java -jar jenkins.war --httpPort=8080
 http://localhost:4444/
 
 adminRMG%2020
+
+git add .
+git commit -m"webdriver"
+git push 
