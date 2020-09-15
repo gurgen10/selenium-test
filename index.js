@@ -1,17 +1,25 @@
 const { Builder, By, Key, until, Capabilities } = require("selenium-webdriver");
-const { expect } = require("chai");
-const capabilities = Capabilities.firefox();
+const chrome = require('selenium-webdriver/chrome');
+const chromeCapabilities = Capabilities.chrome();
+const firefox = require('selenium-webdriver/firefox');
+const firefoxCapabilities = Capabilities.firefox();
+
+firefoxCapabilities.set('chromeOptions', {
+      'args': ['--headless', '--disable-gpu']
+    });
+
+    
+
 
 describe("Linksignal test", () => {
   let driver = null;
   before(() => {
     driver = new Builder()
       .forBrowser("firefox")
-      .usingServer("http://104.237.136.25:8080")
       //.usingServer("http://localhost:4444/wd/hub")
-      //.withCapabilities(capabilities)
+      .setFirefoxOptions(new firefox.Options().addArguments('--headless'))
+      .withCapabilities(firefoxCapabilities)
       .build();
-    driver.manage().window().maximize();
   });
 
   it("Should go to linksignal.ai and fill the search form", (done) => {
@@ -47,7 +55,7 @@ describe("Linksignal test", () => {
         until.elementLocated(By.id("chmln-button-5f022614f2976e0007a3bb9f")),
         20000
       )
-      .click()
+      .click().catch(() => {} )
       .then(() => {
         driver
           .wait(
@@ -56,7 +64,7 @@ describe("Linksignal test", () => {
             ),
             2000
           )
-          .click()
+          .click().catch(() => {} )
          
         driver
           .wait(
@@ -78,7 +86,7 @@ describe("Linksignal test", () => {
                   ),
                   10000
                 )
-                .click().then(done)
+                .click().then(done).catch(() => {} )
                
             });
           })
