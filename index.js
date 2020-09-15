@@ -1,10 +1,11 @@
-const { Builder, By, Key, until, Capabilities } = require("selenium-webdriver");
+const { Builder, By, Key, until, Capabilities, WebDriver } = require("selenium-webdriver");
+
 const chrome = require('selenium-webdriver/chrome');
 const chromeCapabilities = Capabilities.chrome();
 const firefox = require('selenium-webdriver/firefox');
 const firefoxCapabilities = Capabilities.firefox();
 
-firefoxCapabilities.set('chromeOptions', {
+firefoxCapabilities.set('firefoxOptions', {
       'args': ['--headless', '--disable-gpu']
     });
 
